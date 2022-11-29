@@ -17,6 +17,7 @@
 		CE3556772935418800910C66 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3556762935418800910C66 /* LinkModel.swift */; };
 		CE355679293541AC00910C66 /* LastScansTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355678293541AC00910C66 /* LastScansTableViewCell.swift */; };
 		CE35567B293542A300910C66 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35567A293542A300910C66 /* ScannerViewController.swift */; };
+		CE35567D293643C500910C66 /* LinkPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35567C293643C500910C66 /* LinkPresentationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE3556762935418800910C66 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 		CE355678293541AC00910C66 /* LastScansTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastScansTableViewCell.swift; sourceTree = "<group>"; };
 		CE35567A293542A300910C66 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		CE35567C293643C500910C66 /* LinkPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPresentationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CE355672293540F100910C66 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				CE35567C293643C500910C66 /* LinkPresentationManager.swift */,
 				CE3556732935412600910C66 /* CoreData */,
 			);
 			path = Supporting;
@@ -195,6 +198,7 @@
 				CE3556772935418800910C66 /* LinkModel.swift in Sources */,
 				CE3556752935414B00910C66 /* CoreDataManager.swift in Sources */,
 				CE3556632935408E00910C66 /* QR_Scanner_App.xcdatamodeld in Sources */,
+				CE35567D293643C500910C66 /* LinkPresentationManager.swift in Sources */,
 				CE355679293541AC00910C66 /* LastScansTableViewCell.swift in Sources */,
 				CE35567B293542A300910C66 /* ScannerViewController.swift in Sources */,
 			);
