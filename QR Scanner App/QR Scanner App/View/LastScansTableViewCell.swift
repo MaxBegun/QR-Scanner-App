@@ -1,16 +1,26 @@
 import UIKit
 
-class LastScansTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+final class LastScansTableViewCell: UITableViewCell {
+    // MARK: - Lifecycle
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    // MARK: - Setups
+    private func setupUI() {
+        //cell
+        self.selectionStyle = .none
+    }
+    // MARK: - API
+    func setupCell(view: UIView) {
+        contentView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+    }
 }
