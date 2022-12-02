@@ -4,7 +4,7 @@ import AVFoundation
 final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     // MARK: Private
     private let captureSession = AVCaptureSession()
-    private var previewLayer: AVCaptureVideoPreviewLayer?
+    private var previewLayer = AVCaptureVideoPreviewLayer()
     private var qrCodeFrameView: UIView?
     private var alert = UIAlertController()
     private var isScanningQR = false
@@ -57,9 +57,9 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         }
         //init the video preview layer and add it as a sublayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer?.videoGravity = .resizeAspectFill
-        previewLayer?.frame = view.layer.bounds
-        view.layer.addSublayer(previewLayer!)
+        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.frame = view.layer.bounds
+        view.layer.addSublayer(previewLayer)
     }
     
     private func setupQRCodeFrame() {
@@ -88,8 +88,9 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         if let readableObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject {
             if isScanningQR == true {
                 //set frame
-                let barCodeObject = previewLayer?.transformedMetadataObject(for: readableObject)
-                qrCodeFrameView?.frame = barCodeObject!.bounds
+                if let barCodeObject = previewLayer.transformedMetadataObject(for: readableObject) {
+                    qrCodeFrameView?.frame = barCodeObject.bounds
+                }
                 
                 guard let stringValue = readableObject.stringValue else { return }
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
